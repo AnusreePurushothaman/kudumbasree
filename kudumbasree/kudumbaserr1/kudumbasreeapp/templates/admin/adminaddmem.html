@@ -1,0 +1,59 @@
+	
+{% extends 'admin/adminheader.html' %}
+{% block content %}
+
+
+	
+				<!-- validation -->
+				<div class="grids">
+					<div class="progressbar-heading grids-heading">
+						<h2>Add new Member</h2>
+					</div>
+					
+					<div class="forms-grids">
+						<div class="w3agile-validation">
+							<div class="panel panel-widget agile-validation">
+								<div class="my-div">
+									<form method="post" action="/adminaddmem/" >{% csrf_token %}
+
+										<div class="input-info">
+											<h3>Add member:</h3>
+										</div>
+
+										<label for="field-1">Name&nbsp;<span class="at-required-highlight">*</span></label>
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" autocomplete="off" required="">
+										</div>
+
+										<label for="field-1-2">Phone&nbsp;<span class="at-required-highlight">*</span></label>
+										<div class="form-group">
+											<input type="text" name="phone"  class="form-control" autocomplete="off" pattern="[0-9].{9,11}">
+										</div>
+
+										<label for="field-1-3">Email&nbsp;<span class="at-required-highlight">*</span></label>
+										<div class="form-group">
+											<input type="email" name="email" required="true" class="form-control"  autocomplete="off">
+										</div>
+
+ 
+										<label for="field-4">Address&nbsp;<span class="at-required-highlight">*</span></label>
+										<div class="form-group">
+											<textarea name="address" id="field-4" required="true" class="form-control"></textarea>
+										</div>
+
+										<label for="field-4">Remarks&nbsp;<span class="at-required-highlight">*</span></label>
+										<div class="form-group">
+											<textarea name="remarks" id="field-4" required="true" class="form-control"></textarea>
+										</div>
+
+										<p>
+											<input type="submit" name="sub-1" value="Submit" class="btn btn-primary">
+											<input type="reset" name="res-1" id="res-1" value="Reset" class="btn btn-danger">
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						
+						
+	{% endblock %}

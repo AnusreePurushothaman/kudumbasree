@@ -1,0 +1,50 @@
+	
+{% extends 'secreheader.html' %}
+{% block content %}
+
+
+	
+				<!-- validation -->
+				<div class="grids">
+					<div class="progressbar-heading grids-heading">
+						<h2>Loan Repayment</h2>
+					</div>
+					
+					<div class="forms-grids">
+						<div class="w3agile-validation">
+							<div class="panel panel-widget agile-validation">
+								<div class="my-div">
+									<form method="post" action="/repayment/" class="valida">{% csrf_token %}
+
+									
+										<label for="field-1">Name&nbsp;<span class="at-required-highlight">*</span></label>
+
+										<div class="form-group">
+											<select name="id" class="form-control" required="" >
+                                        {% for m1 in a %}
+                                                <option value="{{m1.id}}">{{m1.borrower.name}}</option>
+                                                {% endfor %}
+                                        </select>
+                                            
+
+
+                                                
+                                                </div>
+										<label for="field-1">Amount&nbsp;<span class="at-required-highlight">*</span></label>
+										 
+
+											<div class="form-group">
+											<input type="text" name="amount"  class="form-control" autocomplete="off" required="">
+											</div>
+											</select>
+										<p>
+											<input type="submit"  value="Submit" class="btn btn-primary">
+											<input type="reset" name="res-1" id="res-1" value="Reset" class="btn btn-danger">
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						
+						
+	{% endblock %}
